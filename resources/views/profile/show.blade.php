@@ -30,7 +30,7 @@
                     @foreach($applicant->education as $edu)
                         <div class="border-l-4 border-blue-500 pl-4">
                             <h3 class="font-medium text-gray-800">{{ $edu->degree }}</h3>
-                            <p class="text-gray-600">{{ $edu->institution }}</p>
+                            <p class="text-gray-600">{{ $edu->institution_name }}</p>
                             <p class="text-sm text-gray-500">{{ $edu->year }}</p>
                         </div>
                     @endforeach
@@ -44,7 +44,7 @@
                     @foreach($applicant->experience as $work)
                         <div class="border-l-4 border-green-500 pl-4">
                             <h3 class="font-medium text-gray-800">{{ $work->role }}</h3>
-                            <p class="text-gray-600">{{ $work->company }}</p>
+                            <p class="text-gray-600">{{ $work->company_name }}</p>
                             <p class="text-sm text-gray-500">{{ $work->duration }}</p>
                         </div>
                     @endforeach

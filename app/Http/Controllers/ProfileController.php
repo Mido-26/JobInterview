@@ -117,8 +117,9 @@ class ProfileController extends Controller
 
     // Update Education
     // dd($request);
-    $applicant->education()->delete(); // Remove old education records
+    
     if($request->education){
+        $applicant->education()->delete(); // Remove old education records
         foreach ($request->education as $edu) {
             $applicant->education()->create([
                 'institution_name' => $edu['institution_name'],
@@ -132,9 +133,10 @@ class ProfileController extends Controller
     
 
     // Update Work Experience
-    $applicant->experience()->delete(); // Remove old work experience records
+    
     // dd($request);
     if($request->experience){
+        $applicant->experience()->delete(); // Remove old work experience records
         foreach ($request->experience as $exp) {
             $applicant->experience()->create([
                 'company_name' => $exp['company_name'],
@@ -149,8 +151,9 @@ class ProfileController extends Controller
 
 
     // Update Skills
-    $applicant->skills()->delete(); // Remove old skills
+    
     if($request->skills){ //checking if skills are available if not return error
+        $applicant->skills()->delete(); // Remove old skills
         foreach ($request->skills as $skill) {
             $applicant->skills()->create([
                 'skill_name' => $skill['skill_name'],
